@@ -1,0 +1,120 @@
+---
+title: "Linear Regression in Matrix Notation -- starter code"
+output: html_notebook
+---
+
+This notebook explores linear regression from scratch on a tiny data set
+
+```{r}
+X = c(49, 69, 89, 99, 109)
+y = c(124, 95, 71, 45, 18)
+```
+
+
+We can see that linear regression will fit this data fairly well if we plot the data with an abline. 
+
+```{r}
+plot(X, y)
+abline(lm(y~X))
+```
+
+
+First, here is the solution for simple linear regression in algebraic notation:
+
+$$ \hat{b} = \bar{y} - \hat{w}\bar{x}$$
+$$ \hat{w} = \frac{\sum_{i=1}^{n} (x_i - \bar{x})(y_i - \bar{y}))}{\sum_{i=1}^{n} (x_i - \bar{x})^2}$$
+Find w-hat, the estimated parameter. 
+
+```{r}
+x_mean = mean(X)
+y_mean = mean(y)
+
+w_hat = sum((X - x_mean) * (y - y_mean)) / sum((X - x_mean) ^ 2)
+
+
+print(paste("w hat = ", w_hat))
+```
+
+Find b and print it. 
+
+```{r}
+
+b = y_mean - w_hat * x_mean
+
+print(paste("b = ", b))
+```
+
+Compare to lm()
+
+```{r}
+
+plot(X, y)
+abline(lm(y~X))
+abline(y~w_hat * x + b)
+```
+
+### Matrix notation
+
+$$\hat{w} = (X^TX)^{-1}X^Ty  $$
+
+
+Set up matrices. Matrix notation uses a column of 1s to represent b, or $w_0$
+
+```{r}
+X = matrix(cbind(1, X), ncol=2)
+X
+```
+
+First, perform 
+
+$$X^TX$$
+X transpose will be a 2x5 matrix, X is 5x2. Therefore the result of the matrix multiplication will be a 2x2  matrix.
+
+```{r}
+result <- t(X) %*% X
+result
+```
+
+Find the inverse. The solve() function is built into R.
+
+```{r}
+xt_x_inv <- solve(result)
+xt_x_inv
+```
+We could use the following formula since it is a 2x2 matrix.
+
+$$ if A = \begin{bmatrix} a & b \\ c & d \end{bmatrix} $$
+Then A inverse is:
+
+$$ \frac{1}{ad - bc} \begin{bmatrix} d & -b \\ -c & a \end{bmatrix} $$
+
+
+```{r}
+matrix2 <- matrix(c(result[2,2], -result[1,2], -result[2,1], result[1,1]), nrow=2)
+const <- 1 / (result[1,1]*result[2,2] - result[1,2]*result[2,1]) 
+inv2 <- const * matrix2
+inv2
+```
+
+Now compute the second term.
+
+X transpose is a 2x5 matrix, y is 5x1, so the product will be 2x1.
+
+```{r}
+# your code here
+
+term2 <- t(X) %*% y
+term2
+```
+
+Now multiply the two terms. 
+
+```{r}
+final <- inv2 %*% term2
+final
+```
+
+The same result is achieved from either notation. Note that the inverse was simple to compute here. Normally, computing the inverse is computationally complex, so R uses alternate methods to find the inverse. 
+
+
+
