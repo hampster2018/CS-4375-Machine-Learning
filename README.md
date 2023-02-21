@@ -15,5 +15,7 @@ A simple repo to store class work from CS 4375
 # [Assignment 2](https://github.com/hampster2018/CS-4375-Machine-Learning/tree/main/Assignment-2)
 
 ### Main purpose of this assignment was to attempt to use basic Linear, Logistic, and Naive Bayes to predict values and classes
+Partner - Abby Smith
 
 ## [Classification Notebook](https://github.com/hampster2018/CS-4375-Machine-Learning/blob/main/Assignment-2/Classification.Rmd)
+## [Regression Notebook](https://github.com/hampster2018/CS-4375-Machine-Learning/blob/main/Assignment-2/Regression.Rmd)
