@@ -16,8 +16,7 @@ course: CS 4375.004
 ## Reading and Cleansing Data
 ```{r}
 # Reading in DelayedFlights.csv, filling in all NA with "NA", and retaining column names
-df <- read.csv("C:/Users/83627/Downloads/DelayedFlights.csv", na.strings="NA", header=TRUE)  # Please update the file path for DelayedFlights.csv
-
+df <- read.csv("", na.strings="NA", header=TRUE)  # Please update the file path for DelayedFlights.csv
 head(df)          # Exploring top observations
 str(df)           # Exploring the structure of the data frame
 print("-----")    # Visual break between outputs
@@ -67,7 +66,6 @@ sum(is.na(df$NASDelay) & df$Cancelled == 1)))
 print(paste("Count of all observations with NA in SecurityDelay and Cancelled == 1: ",
 sum(is.na(df$SecurityDelay ) & df$Cancelled == 1)))
 print(paste("Count of all observations with NA in LateAircraftDelay and Cancelled == 1: ", sum(is.na(df$LateAircraftDelay) & df$Cancelled == 1)))
-
 summary(df)
 ```
 From the summary above, we can see there are still NA entries.
@@ -84,11 +82,9 @@ print(paste("Count of all entries where SecurityDelay is NA: ",
 sum(is.na(df$SecurityDelay))))
 print(paste("Count of all entries where LateAircraftDelay  is NA: ",
 sum(is.na(df$LateAircraftDelay))))
-
 ## Showing observations where CarrierDelay is NA and another observation when CarrierDelay is not NA
 df[is.na(df$CarrierDelay),]
 df[!is.na(df$CarrierDelay),]
-
 ## Showing the sum of all observations where each of the five columns are NA
 print("Count of all observations where CarrierDelay, NASDelay, WeatherDelay, SecurityDelay, and LateAircraftDelay are EACH NA: ")
 print(sum(is.na(df$CarrierDelay & is.na(df$NASDelay) & is.na(df$WeatherDelay) & is.na(df$SecurityDelay)) & is.na(df$LateAircraftDelay)))
@@ -118,7 +114,6 @@ print(paste("Count of all entries where LateAircraftDelay  is NA: ",
 sum(is.na(df$LateAircraftDelay))))
 print(paste("Count of all observations where CarrierDelay, NASDelay, WeatherDelay, SecurityDelay, and LateAircraftDelay are EACH NA: ",
 sum(is.na(df$CarrierDelay & is.na(df$NASDelay) & is.na(df$WeatherDelay) & is.na(df$SecurityDelay)) & is.na(df$LateAircraftDelay))))
-
 summary(df)
 ```
 We can see from the above summary that there are no longer NA entries in CarrierDelay, WeatherDelay, NASDelay, SecurityDelay, and LateAircraftDelay.
@@ -156,7 +151,6 @@ print(paste("Count of all observations where the flight was diverted and AirTime
 sum(df$Diverted == 1 & is.na(df$AirTime))))
 print(paste("Count of all observations where the flight was diverted and ArrDelay is NA: ",
 sum(df$Diverted == 1 & is.na(df$ArrDelay))))
-
 summary(df)
 ```
 We can see there are still NA entries in AirTime and ArrDelay.
@@ -189,7 +183,6 @@ print(paste("Count of flights Cancelled: ",
 sum(df$Cancelled == 1)))
 print(paste("Count of NA entries in AirTime and ArrDelay when the flight was cancelled: ",
 sum(is.na(df$AirTime) & is.na(df$ArrDelay) & df$Cancelled == 1)))
-
 summary(df)
 ```
 We can see there are no longer NA entries in AirTime and ArrDelay.
@@ -235,7 +228,6 @@ print(paste("Count of observations where both ArrTime and TaxiIn are NA and the 
 sum(is.na(df$ArrTime) & is.na(df$TaxiIn) & df$Diverted == 1)))
 print(paste("Count of observations where both ArrTime and TaxiIn are NA and the flight was cancelled: ",
 sum(is.na(df$ArrTime) & is.na(df$TaxiIn) & df$Cancelled == 1)))
-
 summary(df)
 ```
 We can see that whenever the flight was diverted, there is an NA in ArrTime and TaxiIn. 
@@ -261,7 +253,6 @@ print(paste("Count of observations where both ArrTime and TaxiIn are NA and the 
 sum(is.na(df$ArrTime) & is.na(df$TaxiIn) & df$Diverted == 1)))
 print(paste("Count of observations where both ArrTime and TaxiIn are NA and the flight was cancelled: ",
 sum(is.na(df$ArrTime) & is.na(df$TaxiIn) & df$Cancelled == 1)))
-
 summary(df)
 ```
 We can see there are no longer NA entries in ArrTime and TaxiIn.
@@ -278,7 +269,6 @@ print(paste("Count of observations where ActualElapsedTime NA and the flight was
 sum(is.na(df$ActualElapsedTime) & df$Diverted == 1)))
 print(paste("Count of observations where ActualElapsedTime NA and the flight was cancelled: ",
 sum(is.na(df$ActualElapsedTime) & df$Cancelled == 1)))
-
 df[is.na(df$ActualElapsedTime),]
 ```
 We can see that whenever a flight was diverted, there are NA entries in ActualElapsedTime. This makes sense since if the flight was diverted, data may not have needed to be recorded for ActualElapsedTime.
@@ -300,7 +290,6 @@ print(paste("Count of observations where ActualElapsedTime NA and the flight was
 sum(is.na(df$ActualElapsedTime) & df$Diverted == 1)))
 print(paste("Count of observations where ActualElapsedTime NA and the flight was cancelled: ",
 sum(is.na(df$ActualElapsedTime) & df$Cancelled == 1)))
-
 summary(df)
 ```
 We can see there are no longer NA entries!
@@ -450,7 +439,6 @@ Now we will build a simple linear regression model (with one predictor) and outp
 Here our one predictor is ActualElapsedTime.
 ```{r}
 lm_train_simple <- lm(train$ActualElapsedTime~train$Distance, data=train)
-
 summary(lm_train_simple)
 ```
 As seen above, the summary call provides a rich overview of our linear regression model and its fit.
@@ -489,9 +477,7 @@ The output above shows the four residual plots. Each residual plot is meant to b
 ### f. Building a Multiple Linear Regression Model (Multiple Predictors), Summary, and Residuals Plot
 ```{r}
 lm_train_multiple <- lm(train$ActualElapsedTime~train$Distance+train$ArrTime, data=train)
-
 summary(lm_train_multiple)
-
 plot(lm_train_multiple)
 ```
 
@@ -499,9 +485,7 @@ plot(lm_train_multiple)
 ### g. Building a Third Linear Model (Different Combination of Predictors), Summary, and Residual Plot
 ```{r}
 lm_train_third <- lm(train$ActualElapsedTime~train$CRSElapsedTime+train$Distance, data=train)
-
 summary(lm_train_third)
-
 plot(lm_train_third)
 ```
 
