@@ -19,3 +19,11 @@ Partner - Abby Smith
 
 ## [Classification Notebook](https://github.com/hampster2018/CS-4375-Machine-Learning/blob/main/Assignment-2/Classification.Rmd)
 ## [Regression Notebook](https://github.com/hampster2018/CS-4375-Machine-Learning/blob/main/Assignment-2/Regression.Rmd)
+
+# [Assignment 3](https://github.com/hampster2018/CS-4375-Machine-Learning/tree/main/Assignment-3)
+
+### Main purpose of this assignment is to do logistic and naive bayes regression from scratch in C++
+
+## [Program 1](https://github.com/hampster2018/CS-4375-Machine-Learning/tree/main/Assignment-3/Program1)
+## [Program 2](https://github.com/hampster2018/CS-4375-Machine-Learning/tree/main/Assignment-3/Program2)
+## [Assignment 3](https://github.com/hampster2018/CS-4375-Machine-Learning/blob/main/Assignment-3/Assignment%203.pdf)
