@@ -27,3 +27,13 @@ Partner - Abby Smith
 ## [Program 1](https://github.com/hampster2018/CS-4375-Machine-Learning/tree/main/Assignment-3/Program1)
 ## [Program 2](https://github.com/hampster2018/CS-4375-Machine-Learning/tree/main/Assignment-3/Program2)
 ## [Assignment 3](https://github.com/hampster2018/CS-4375-Machine-Learning/blob/main/Assignment-3/Assignment%203.pdf)
+
+# [Assignment 4](https://github.com/hampster2018/CS-4375-Machine-Learning/tree/main/Assignment-4)
+
+### Main purpose of this assignment is to learn how to apply models such as clustering and use methods such as PCA and LDA which are dimensionality reduction techniques
+
+## [Part 1](https://github.com/hampster2018/CS-4375-Machine-Learning/blob/main/Assignment-4/Part%201.pdf)
+## [Part 2](https://github.com/hampster2018/CS-4375-Machine-Learning/blob/main/Assignment-4/Part%202.pdf)
+## [Part 3](https://github.com/hampster2018/CS-4375-Machine-Learning/blob/main/Assignment-4/Part%203.pdf)
+## [Part 4](https://github.com/hampster2018/CS-4375-Machine-Learning/blob/main/Assignment-4/Part%204.pdf)
+## [Part 5](https://github.com/hampster2018/CS-4375-Machine-Learning/blob/main/Assignment-4/Part%205.pdf)
