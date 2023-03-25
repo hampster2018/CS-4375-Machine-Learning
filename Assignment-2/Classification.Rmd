@@ -168,10 +168,13 @@ func <- function(df){
 ```
 
 
-Makes a logistical model that compares the peak to the interval plus the type of rhythm the patient had. We first split the data into its different classes and then run it through the function for the logistical creation. It then evaluates the data on the test data and shows that the model is perfectly seperable into the two types. Even giving a warning of not converging. This means that the classes were easily separable given the predictor of X0_qPeak.
+Makes a logistical model that compares the peak to the interval plus the type of rhythm the patient had. We first split the data into its different classes and then run it through the function for the logistical creation. We can see that it does a good job predicting for N, but not a good job predicting for VEB. Giving us an average score of about 44 percent.
 ```{r}
-n_data <- df[df$type == "N",]
-veb_data <- df[df$type == "VEB",]
+n_data <- df
+veb_data <- df
+
+n_data$type <- as.factor(ifelse(n_data$type=="N", 1, 0))
+veb_data$veb_data <- as.factor(ifelse(veb_data$type=="VEB", 1, 0))
 
 func(n_data)
 func(veb_data)
@@ -212,7 +215,7 @@ confusionMatrix(resultNaiveBayes, test$type)
 ```
 
 ### Comparing Naive Bayes to Logistival Regression
-For both models they output a classification result saying which class it thinks the specific class is in. In this case Logistical Regression won out because it found a line that perfectly separated the two classes giving a 100 percent success rate in finding the difference between Normal rhythms and VEB rhythms.In addition we had a data set with an extremely high number of observations meaning we logistical models would have done better even if there wasn't a perfect dividing line between the classes.
+For both models they output a classification result saying which class it thinks the specific class is in. In this case the N and VEB couldn't be well separated by any logistical line, but it could be separated well by naive bayes since it was also based on population.
 
 # Strengths and Weaknesses
 
