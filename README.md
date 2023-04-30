@@ -1,6 +1,7 @@
 # CS-4375-Machine-Learning
 A simple repo to store class work from CS 4375
 
+# [Summary](https://github.com/hampster2018/CS-4375-Machine-Learning/blob/main/summary.txt)
 
 # [Overview of ML](https://github.com/hampster2018/CS-4375-Machine-Learning/blob/main/Overview_of_ML.pdf)
 
@@ -37,3 +38,7 @@ Partner - Abby Smith
 ## [Part 3](https://github.com/hampster2018/CS-4375-Machine-Learning/blob/main/Assignment-4/Part%203.pdf)
 ## [Part 4](https://github.com/hampster2018/CS-4375-Machine-Learning/blob/main/Assignment-4/Part%204.pdf)
 ## [Part 5](https://github.com/hampster2018/CS-4375-Machine-Learning/blob/main/Assignment-4/Part%205.pdf)
+
+### Classifies tom and jerry images using convulation layers. Also uses transfer learning
+
+## [Assignment](https://github.com/hampster2018/CS-4375-Machine-Learning/blob/main/Assignment-6/ImageClassification.pdf)
