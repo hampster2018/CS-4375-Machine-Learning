@@ -1,0 +1,5 @@
+Over this semester in machine learning I refined a lot of the general application skills that I had using from before. I understood how many of the algorthims work instead of simply applying  premade algorthims from tensorflow.
+
+Another benefit is that I learned R as a language. It has great uses when it comes to data visualization, but I still prefer python for general usage.
+
+Some future plans I have are to learn more about reinforcment models specifically. It is a technique we didn't get to get into very much due to time restrictions, but it would be fun to do in my own time.
